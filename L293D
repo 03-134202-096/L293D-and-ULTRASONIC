@@ -1,0 +1,33 @@
+const int trig=0;
+const int echo=1;
+const int buzzer=5;
+void setup()
+{
+  pinMode(0, OUTPUT);
+  pinMode(1, INPUT);
+  pinMode(5, OUTPUT);
+}
+void loop()
+{
+ analogWrite(0, LOW);
+ delay(1000);
+
+analogWrite(0, HIGH);
+delay(500);
+
+analogWrite(0, LOW);
+
+long duration = pulseIn(1, HIGH);
+
+int distance = duration / 58;
+
+if (distance<=4) {
+analogWrite(5, HIGH);
+}
+else {
+analogWrite(5, LOW);
+
+}
+
+delay(1000);
+}
